@@ -1,0 +1,27 @@
+create database ccf;
+
+create table login (userid varchar(30) not null primary key,password varchar(32) not null);
+
+create table Student (userid varchar(30) not null primary key,password varchar(32) not null,name VARCHAR(8) not null,gender VARCHAR(2) not null,phone VARCHAR(11) not null,isfirstexam boolean not null DEFAULT false,college VARCHAR(128) not null,grade VARCHAR(8) not null,Class VARCHAR(8) not null,major VARCHAR(32) not null);
+
+create table Admin(adminname VARCHAR(32) not null DEFAULT 'admin',adpassword VARCHAR(32) not null DEFAULT 'admin');
+ALTER TABLE admin add primary key(adminname);
+
+create table Message(data Date not null  primary key,context VARCHAR(100) not null,sender VARCHAR(32) not null  ,receiver VARCHAR(32) not null);
+
+create table Notice(data Date not null  primary key,context VARCHAR(100) not null,sender VARCHAR(32) not null  ,receiver VARCHAR(32) not null);
+
+create table Score(userid VARCHAR(32) not null primary key,id VARCHAR(8) not null,isexam boolean  not null DEFAULT false,name VARCHAR(8) not null,gender VARCHAR(2) not null,phone VARCHAR(11) not null,isnormal boolean not null DEFAULT false,first int not null,second int not null,third int not null,fourth int not null,fifth  int not null);
+ALTER TABLE score add key(id);
+
+create table Blacklist(userid VARCHAR(32) not null primary key,name VARCHAR(8) not null,gender VARCHAR(2) not null,phone VARCHAR(11) not null);
+
+create table Allowlist(userid VARCHAR(32) not null primary key,name VARCHAR(8) not null,gender VARCHAR(2) not null,phone VARCHAR(11) not null);
+
+create table ExamScore(userid VARCHAR(32) not null primary key,name VARCHAR(8) not null,gender VARCHAR(2) not null,phone VARCHAR(11) not null,first int not null,second int not null,third int not null,fourth int not null,fifth  int not null);
+
+
+
+
+
+
